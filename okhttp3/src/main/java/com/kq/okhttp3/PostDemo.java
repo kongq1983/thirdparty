@@ -32,7 +32,7 @@ public class PostDemo {
     }
 
 
-    String bowlingJson(String player1, String player2) {
+    public static String bowlingJson(String player1, String player2) {
         return "{'winCondition':'HIGH_SCORE',"
                 + "'name':'Bowling',"
                 + "'round':4,"
