@@ -12,6 +12,7 @@
         <module>okhttp3</module>
         <module>guava</module>
         <module>java</module>
+        <module>drools</module>
     </modules>
 
 
@@ -22,6 +23,8 @@
         <okhttp3.version>3.14.0</okhttp3.version>
         <fastjson.version>1.2.56</fastjson.version>
         <guava.version>27.1-jre</guava.version>
+        <drools.version>7.0.0.Final</drools.version>
+        <junit.version>4.10</junit.version>
     </properties>
 
 
@@ -49,8 +52,35 @@
                 <version>${guava.version}</version>
             </dependency>
 
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>4.12</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.kie</groupId>
+                <artifactId>kie-api</artifactId>
+                <version>${drools.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.drools</groupId>
+                <artifactId>drools-core</artifactId>
+                <version>${drools.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.drools</groupId>
+                <artifactId>drools-compiler</artifactId>
+                <version>${drools.version}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
+
+
+
 
 
     <build>
