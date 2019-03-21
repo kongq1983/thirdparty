@@ -24,7 +24,7 @@
         <fastjson.version>1.2.56</fastjson.version>
         <guava.version>27.1-jre</guava.version>
         <drools.version>7.0.0.Final</drools.version>
-        <junit.version>4.10</junit.version>
+        <junit.version>4.12</junit.version>
     </properties>
 
 
@@ -52,11 +52,7 @@
                 <version>${guava.version}</version>
             </dependency>
 
-            <dependency>
-                <groupId>junit</groupId>
-                <artifactId>junit</artifactId>
-                <version>4.12</version>
-            </dependency>
+
 
             <dependency>
                 <groupId>org.kie</groupId>
@@ -80,7 +76,16 @@
     </dependencyManagement>
 
 
+    <dependencies>
 
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+    </dependencies>
 
 
     <build>

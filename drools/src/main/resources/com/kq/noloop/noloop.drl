@@ -1,0 +1,55 @@
+package com.kq.noloop
+
+import com.kq.drools.entity.Goods
+
+rule "updateDistcount"
+// 设置为 true
+no-loop true
+when
+    productObj:Goods(discount > 0);
+then
+    // 符合就将Discount自增1
+    productObj.setDiscount(productObj.getDiscount() + 1);
+    System.out.println("discount="+productObj.getDiscount());
+    update(productObj);  //这个会导致死循环   要加no-loop true
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

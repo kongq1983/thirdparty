@@ -40,11 +40,11 @@ public class StudentRuleTest {
 
     public static List<Student> getStus() {
         List<Student> stus = new ArrayList<>();
-        stus.add(new Student("张三", 16, "male"));
-        stus.add(new Student("huhu", 18, "male"));
-        stus.add(new Student("王五", 32, "male"));
-        stus.add(new Student("张红", 23, "female"));
-        stus.add(new Student("李四", 35, "male"));
+//        stus.add(new Student("张三", 16, "male"));
+//        stus.add(new Student("huhu", 18, "male"));
+//        stus.add(new Student("王五", 32, "male"));
+//        stus.add(new Student("张红", 23, "female"));
+//        stus.add(new Student("李四", 35, "male"));
         stus.add(new Student("张小雅", 31, "female"));
         return stus;
     }

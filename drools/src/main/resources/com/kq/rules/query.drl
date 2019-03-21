@@ -6,6 +6,19 @@ import com.kq.drools.entity.Student;
 //在 LHS 当中，可以包含 0~n 个条件，如果 LHS 部分没空的话，那么引擎会自动添加一个eval(true)的条件，由于该条件总是返回 true，所以 LHS 为空的规则总是返回 true。
 //RHS：结果部分又被称之为 RightHand Side，简称为 RHS，在一个规则当中 then后面部分就是 RHS，只有在 LHS 的所有条件都满足时 RHS 部分才会执行。
 
+//  salience 数字越大 优先级越高
+
+no-loop false
+
+rule "rule2"
+    salience 2
+    when
+         $stu:Student(gender=="female",age>25)
+    then
+//         System.out.println("性别为男,age>25岁的人:"+$stu.getName());
+         System.out.println("age>25岁的人:"+$stu.getName());
+end
+
 rule "rule1"
     salience 1
     when
@@ -14,14 +27,6 @@ rule "rule1"
         System.out.println("age>30岁的人:"+$stu.getName());//RHS
 end
 
-
-rule "rule2"
-    salience 2
-    when
-         $stu:Student(gender=="male",age>25)
-    then
-         System.out.println("性别为男,age>25岁的人:"+$stu.getName());
-end
 
 
 rule "rule3"
