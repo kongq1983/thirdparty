@@ -1,6 +1,7 @@
 package com.kq.guava.utilites;
 
 import com.google.common.base.Joiner;
+import com.google.common.collect.ImmutableMap;
 import org.junit.Test;
 
 
@@ -10,6 +11,7 @@ import static org.hamcrest.CoreMatchers.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by qikong on 2019/3/21.
@@ -17,6 +19,8 @@ import java.util.List;
 public class JoinerTest {
 
     List<String> list = Arrays.asList("Google","Java","Groovy",null,"Scala",null,"Spark");
+
+    Map<String,String> map = ImmutableMap.of("one","1","two","2","three","3");
 
     @Test(expected = NullPointerException.class)
     public void testJoin(){
@@ -63,6 +67,15 @@ public class JoinerTest {
         assertThat(resultBuilder,sameInstance(builder));
 
         assertThat(resultBuilder.toString(),equalTo("Google-Java-Groovy--Scala--Spark"));
+    }
+
+
+    @Test
+    public void testJoinMapKeyValue(){
+        String str = Joiner.on("-").withKeyValueSeparator("=").join(map);
+        System.out.println(str);
+
+        assertThat(str,equalTo("one=1-two=2-three=3"));
     }
 
 }
