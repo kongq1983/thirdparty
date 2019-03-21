@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kmodule xmlns="http://www.drools.org/xsd/kmodule">
+    <kbase name="rules">
+        <ksession name="all-rules"/>
+    </kbase>
+
+
+    <kbase name="conditional-kbase" packages="com.kq.conditional">
+        <ksession name="conditional-rules"/>
+    </kbase>
+
+
+    <kbase name="noLoop-kbase"  packages="com.kq.noloop" >
+        <ksession name="noLoopSession"/>
+    </kbase>
+
+    <kbase name="lock-on-active-kbase"  packages="com.kq.lockonactive" >
+        <ksession name="lockOnActiveSession"/>
+    </kbase>
+
+</kmodule>

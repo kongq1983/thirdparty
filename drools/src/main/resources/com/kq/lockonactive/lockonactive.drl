@@ -1,0 +1,39 @@
+package com.kq.lockonactive
+
+import com.kq.drools.entity.Goods;
+
+rule rule1
+no-loop true
+when
+    obj : Goods(discount > 0);
+then
+    obj.setDiscount(obj.getDiscount() + 1);
+    System.out.println("新折扣为：" + obj.getDiscount());
+    update(obj);
+end
+
+
+rule rule2
+// lock-on-active 属性的值设置为true，可避免因某些Fact对象被修改而使已经执行过的规则再次被激活执行
+// 没有lock-on-active true 会执行2次
+lock-on-active true
+when
+    productObj : Goods(discount > 1);
+then
+    System.out.println("其他规则被触发了" + productObj.getDiscount());
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
