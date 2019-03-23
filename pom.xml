@@ -13,6 +13,8 @@
         <module>guava</module>
         <module>java</module>
         <module>drools</module>
+        <module>myservice</module>
+        <module>myservant</module>
     </modules>
 
 
