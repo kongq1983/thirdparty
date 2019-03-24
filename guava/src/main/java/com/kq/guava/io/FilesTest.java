@@ -25,6 +25,14 @@ public class FilesTest {
         File moveFile = new File(IOConfig.MOVE_FILE);
         File moveToFile = new File(IOConfig.MOVE_TO_FILE);
 
+        if(!srcFile.exists()) {
+            if(!srcFile.getParentFile().exists()) {
+                Files.createParentDirs(srcFile);
+            }
+
+            Files.write("welcome to you!".getBytes(),srcFile);
+        }
+
         if(targetFile.exists()) {
             targetFile.delete();
         }
