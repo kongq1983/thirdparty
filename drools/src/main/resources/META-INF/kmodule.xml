@@ -18,4 +18,9 @@
         <ksession name="lockOnActiveSession"/>
     </kbase>
 
+
+    <kbase name="saleorder-kbase"  packages="com.kq.saleorder">
+        <ksession name="saleOrderSession"/>
+    </kbase>
+
 </kmodule>

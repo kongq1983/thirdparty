@@ -1,0 +1,19 @@
+package com.kq.saleorder;
+
+import com.kq.drools.entity.SaleOrder
+
+rule "boss-rule"
+when
+    s: SaleOrder()
+
+    if(s.getIndentity()==2) do[bossDiscount]
+    else do[otherDiscount]
+
+then
+    System.out.println("--------------------------");
+then[bossDiscount]
+    s.setDiscount(0.5f);
+then[otherDiscount]
+    s.setDiscount(0.1f);
+
+end
