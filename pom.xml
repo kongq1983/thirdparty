@@ -30,6 +30,7 @@
         <junit.version>4.12</junit.version>
         <ehcache.version>3.7.0</ehcache.version>
         <javax.cache.version>1.1.0</javax.cache.version>
+        <common.lang3.version>3.8.1</common.lang3.version>
     </properties>
 
 
@@ -101,6 +102,12 @@
             <artifactId>junit</artifactId>
             <version>${junit.version}</version>
             <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>${common.lang3.version}</version>
         </dependency>
 
     </dependencies>
