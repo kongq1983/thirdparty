@@ -5,6 +5,7 @@ import org.ehcache.CacheManager;
 import org.ehcache.config.builders.CacheConfigurationBuilder;
 import org.ehcache.config.builders.CacheManagerBuilder;
 import org.ehcache.config.builders.ResourcePoolsBuilder;
+import org.ehcache.config.units.MemoryUnit;
 
 
 /**
@@ -18,7 +19,7 @@ public class Demo {
         CacheManager cacheManager = CacheManagerBuilder.newCacheManagerBuilder()
                 .withCache("preConfigured",
                         CacheConfigurationBuilder.newCacheConfigurationBuilder(Long.class, String.class,
-                                ResourcePoolsBuilder.heap(100))
+                                ResourcePoolsBuilder.heap(100).offheap(10, MemoryUnit.MB))
                                 .build())
                 .build(true);
 
@@ -33,6 +34,7 @@ public class Demo {
         String value = myCache.get(1L);
 
         System.out.println("value="+value);
+
 
         cacheManager.close();
     }
