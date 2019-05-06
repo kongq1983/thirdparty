@@ -17,3 +17,21 @@ then[otherDiscount]
     s.setDiscount(0.1f);
 
 end
+
+
+
+rule "boss-rule1"
+when
+    s: SaleOrder()
+
+    if(s.getIndentity()==2) do[bossDiscount1]
+    else do[otherDiscount1]
+
+then
+    System.out.println("--------------------------");
+then[bossDiscount1]
+    s.setDiscount(0.6f);
+then[otherDiscount1]
+    s.setDiscount(0.2f);
+
+end
