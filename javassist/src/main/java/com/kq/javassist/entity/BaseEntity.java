@@ -8,14 +8,32 @@ package com.kq.javassist.entity;
  */
 public class BaseEntity {
 
-    private String createUser;
+    protected String id;
 
-    public String getCreateUser() {
-        return createUser;
+    protected String name;
+
+    public String getId() {
+        return id;
     }
 
-    public void setCreateUser(String createUser) {
-        this.createUser = createUser;
+    public void setId(String id) {
+        this.id = id;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("BaseEntity{");
+        sb.append("id='").append(id).append('\'');
+        sb.append(", name='").append(name).append('\'');
+        sb.append('}');
+        return sb.toString();
+    }
 }

@@ -10,7 +10,7 @@ import java.io.IOException;
  * @author kq
  * @date 2019-05-09
  */
-public class CompanyWriteDemo {
+public class LocationWriteDemo {
 
     public static void main(String[] args) throws CannotCompileException, IOException {
         ClassPool pool = ClassPool.getDefault();
