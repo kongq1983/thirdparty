@@ -341,7 +341,7 @@ public abstract class Wrapper11 {
 //    public abstract Object getPropertyValue(Object var1, String var2) throws NoSuchPropertyException, IllegalArgumentException;
 //
 //    public abstract void setPropertyValue(Object var1, String var2, Object var3) throws NoSuchPropertyException, IllegalArgumentException;
-//
+////
 //    public Object[] getPropertyValues(Object instance, String[] pns) throws NoSuchPropertyException, IllegalArgumentException {
 //        Object[] ret = new Object[pns.length];
 //
