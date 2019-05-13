@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="xiaop" pageWidth="595" pageHeight="842" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="20" bottomMargin="20" isIgnorePagination="true" uuid="d65fc08c-8461-48e3-a728-819eb14bd668">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Sample DB"/>
+	<property name="com.jaspersoft.studio.unit." value="mm"/>
+	<parameter name="qrCode" class="java.lang.String"/>
+	<parameter name="orderCode" class="java.lang.String"/>
+	<parameter name="name" class="java.lang.String"/>
+	<parameter name="mobile" class="java.lang.String"/>
+	<parameter name="deptName" class="java.lang.String"/>
+	<parameter name="totalPrice" class="java.math.BigDecimal"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="name" class="java.lang.String"/>
+	<field name="amount" class="java.lang.Integer"/>
+	<field name="price" class="java.math.BigDecimal"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="31" splitType="Stretch">
+			<staticText>
+				<reportElement x="-5" y="6" width="228" height="23" uuid="ab0cf1ec-d7f2-492a-8f95-0bbc336b027b"/>
+				<textElement textAlignment="Left" rotation="None">
+					<font fontName="微软雅黑" size="14"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[******** 网上购物订单 ********]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="101" splitType="Stretch">
+			<property name="com.jaspersoft.studio.layout"/>
+			<textField>
+				<reportElement x="44" y="4" width="180" height="20" uuid="5253e406-8c1f-4fa8-82d2-c87988071749"/>
+				<textElement textAlignment="Left" markup="none">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{orderCode}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="4" y="4" width="50" height="20" uuid="c4fd41a7-a4a6-4efb-ac3d-cb8cca22ed72"/>
+				<textElement textAlignment="Left">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[订单：]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4" y="30" width="50" height="24" uuid="ae673216-c711-43b5-9094-2f9f2d1ac16d"/>
+				<textElement textAlignment="Left">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[姓名：]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="44" y="30" width="180" height="24" uuid="76e6dca6-5b16-44f3-b217-4aeaebc9e06e"/>
+				<textElement textAlignment="Left" markup="none">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="44" y="55" width="180" height="30" uuid="ad905f9e-ce71-4bd0-98fc-49122adc8bd7"/>
+				<textElement textAlignment="Left" markup="none">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{mobile}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="3" y="55" width="50" height="30" uuid="e8b19cc8-e778-4185-87a0-1a779cd8e186"/>
+				<textElement textAlignment="Left">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[电话：]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4" y="79" width="50" height="21" uuid="9f0c7cbc-2a6e-4a54-900a-8e34cd8c772f"/>
+				<textElement textAlignment="Left">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[部门：]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="45" y="79" width="180" height="21" uuid="70f069d1-16b9-47f6-b533-1c504e0579fe"/>
+				<textElement textAlignment="Left" markup="none">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{deptName}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="53" splitType="Stretch">
+			<line>
+				<reportElement x="5" y="7" width="218" height="1" uuid="57572ad1-f067-435b-a566-20818f8b6a53"/>
+			</line>
+			<line>
+				<reportElement x="5" y="44" width="218" height="1" uuid="f12748be-564d-453d-8a3d-3181ea26d486"/>
+			</line>
+			<staticText>
+				<reportElement x="9" y="16" width="51" height="21" uuid="4f89aa43-50b1-47b8-933b-0d914a658c7b"/>
+				<textElement textAlignment="Left">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[品名]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="93" y="16" width="51" height="21" uuid="46c58e91-0e5f-4674-8709-0102dc0dd49f"/>
+				<textElement textAlignment="Left">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[数量]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="169" y="16" width="51" height="21" uuid="10c29959-c91c-47b9-ab17-020b3d185cf9"/>
+				<textElement textAlignment="Left">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[单价]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="34" splitType="Stretch">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+			<textField>
+				<reportElement x="9" y="10" width="59" height="20" uuid="53f76d63-604a-402a-9e53-07b79447d809"/>
+				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="90" y="10" width="90" height="20" uuid="edf0bc4e-74db-4c98-b21f-65e0e38d898c"/>
+				<textFieldExpression><![CDATA[$F{amount}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="54" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="1" width="221" height="1" uuid="08919a57-5b4f-4001-b94b-93a05623be8d"/>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="57" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="289" splitType="Stretch"/>
+	</summary>
+</jasperReport>

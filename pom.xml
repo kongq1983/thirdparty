@@ -17,6 +17,7 @@
         <module>myservant</module>
         <module>ehcache</module>
         <module>javassist</module>
+        <module>jasperreport</module>
     </modules>
 
 
@@ -32,7 +33,9 @@
         <ehcache.version>3.7.0</ehcache.version>
         <javax.cache.version>1.1.0</javax.cache.version>
         <common.lang3.version>3.8.1</common.lang3.version>
+        <common.io.version>2.6</common.io.version>
         <javasssit.version>3.20.0-GA</javasssit.version>
+        <jasperreports.version>6.1.0</jasperreports.version>
     </properties>
 
 
@@ -96,6 +99,20 @@
                 <groupId>org.javassist</groupId>
                 <artifactId>javassist</artifactId>
                 <version>${javasssit.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/net.sf.jasperreports/jasperreports -->
+            <dependency>
+                <groupId>net.sf.jasperreports</groupId>
+                <artifactId>jasperreports</artifactId>
+                <version>${jasperreports.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>${common.io.version}</version>
             </dependency>
 
 
