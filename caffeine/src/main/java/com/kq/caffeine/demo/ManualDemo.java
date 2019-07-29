@@ -7,7 +7,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * ManualDemo
- *
+ * 手动填充
  * @author kq
  * @date 2019-07-29
  */
@@ -51,8 +51,32 @@ public class ManualDemo {
 
     }
 
+    public void putNull(){
+//        手动填充： key和value都不能为null， 否则NullPointerException
+        try {
+            cache.put(null,""); //NullPointerException
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        try {
+            cache.put("",null); //NullPointerException
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        try {
+            cache.put("","");
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
     public static void main(String args[]) {
-        new ManualDemo().getTest();
+        ManualDemo t = new ManualDemo();
+        t.getTest();
+        t.putNull();
     }
 
 
