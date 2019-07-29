@@ -2,6 +2,8 @@ package com.kq.caffeine.demo;
 
 import org.apache.commons.lang3.StringUtils;
 
+import java.util.concurrent.CompletableFuture;
+
 /**
  * CacheUtil
  * @author kq
@@ -14,9 +16,41 @@ public class CacheUtil {
         if(StringUtils.equals(key,"4")) return null;
 
         String value = "sync:"+key;
-        System.out.println("从库中读取数据="+value);
+        System.out.println("同步从库中读取数据="+value);
 
         return value;
+
+    }
+
+
+    public static String getASyncValue(final String key) {
+
+        if(StringUtils.equals(key,"4")){
+            try {
+                Thread.sleep(3000l);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+
+
+        return  "async:"+key;
+
+    }
+
+
+    public static CompletableFuture<String> getASyncValueCompletable(final String key) {
+
+        CompletableFuture<String> future2 = CompletableFuture.supplyAsync(() -> {
+            try {
+                Thread.sleep(3000l);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            return  "async:"+key;
+        });
+
+        return future2;
 
     }
 
