@@ -18,6 +18,7 @@
         <module>ehcache</module>
         <module>javassist</module>
         <module>jasperreport</module>
+        <module>caffeine</module>
     </modules>
 
 
