@@ -2,6 +2,7 @@ package com.kq.caffeine.demo;
 
 import com.github.benmanes.caffeine.cache.Caffeine;
 import com.github.benmanes.caffeine.cache.LoadingCache;
+import com.kq.caffeine.util.CacheUtil;
 
 import java.util.concurrent.TimeUnit;
 

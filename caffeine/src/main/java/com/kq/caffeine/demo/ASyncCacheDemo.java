@@ -2,7 +2,7 @@ package com.kq.caffeine.demo;
 
 import com.github.benmanes.caffeine.cache.AsyncCache;
 import com.github.benmanes.caffeine.cache.Caffeine;
-import com.sun.corba.se.impl.orbutil.graph.Graph;
+import com.kq.caffeine.util.CacheUtil;
 
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.TimeUnit;

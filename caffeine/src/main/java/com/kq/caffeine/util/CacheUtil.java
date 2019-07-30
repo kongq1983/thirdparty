@@ -1,5 +1,6 @@
-package com.kq.caffeine.demo;
+package com.kq.caffeine.util;
 
+import com.kq.caffeine.util.DateUtil;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.concurrent.CompletableFuture;
@@ -15,7 +16,7 @@ public class CacheUtil {
 
         if(StringUtils.equals(key,"4")) return null;
 
-        String value = "sync:"+key;
+        String value = "sync:"+ DateUtil.getNowHourMinute()+"_"+key;
         System.out.println("同步从库中读取数据="+value);
 
         return value;
