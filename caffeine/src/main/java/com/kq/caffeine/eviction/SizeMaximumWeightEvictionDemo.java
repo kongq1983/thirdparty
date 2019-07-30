@@ -14,19 +14,23 @@ import java.util.Map;
  * @author kq
  * @date 2019-07-29
  */
-public class SizeEvictionDemo {
+public class SizeMaximumWeightEvictionDemo {
 
-    private static final int size = 100;
+    private static final int size = 10;
 
     // Evict based on the number of vertices in the cache
     static LoadingCache<String, String> cache = Caffeine.newBuilder()
 //            .maximumSize(10)
-            .maximumWeight(10)
+            .maximumWeight(19)
             .weigher((String key, String value) -> {
                     Integer weight = Integer.parseInt(value.split("_")[1]);
                 System.out.println(value+","+"weight="+weight);
                     return weight;
             })  //权重
+            .removalListener(((key, value, cause) -> {
+                String msg = "remove key=%s,value=%s,cause=%s \n";
+                System.out.printf(msg,key,value,cause);
+            }))
             .build(key -> CacheUtil.getSyncValue(key));
 
 
@@ -39,6 +43,7 @@ public class SizeEvictionDemo {
             keys.add(String.valueOf(i));
         }
 
+        System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
         Thread.sleep(3000l);
 
         System.out.println("----------------------------------------------------");

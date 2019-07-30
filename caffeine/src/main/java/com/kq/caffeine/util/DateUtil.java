@@ -28,7 +28,7 @@ public class DateUtil {
      */
     public static String getNowHourMinute(){
 
-        SimpleDateFormat aDate=new SimpleDateFormat("HH:mm");
+        SimpleDateFormat aDate=new SimpleDateFormat("HH:mm:ss");
 
         return aDate.format(new Date());
 
