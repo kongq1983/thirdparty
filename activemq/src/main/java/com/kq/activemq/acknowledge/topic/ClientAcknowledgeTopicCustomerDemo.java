@@ -1,4 +1,4 @@
-package com.kq.activemq.acknowledge;
+package com.kq.activemq.acknowledge.topic;
 
 import com.kq.activemq.Util;
 import org.apache.activemq.ActiveMQConnectionFactory;

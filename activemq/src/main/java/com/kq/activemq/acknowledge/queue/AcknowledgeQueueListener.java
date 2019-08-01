@@ -1,4 +1,4 @@
-package com.kq.activemq.acknowledge;
+package com.kq.activemq.acknowledge.queue;
 
 import org.apache.commons.lang3.StringUtils;
 
