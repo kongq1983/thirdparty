@@ -2,6 +2,7 @@ package com.kq.activemq.acknowledge;
 
 import com.kq.activemq.Util;
 import org.apache.activemq.ActiveMQConnectionFactory;
+import org.apache.commons.lang3.StringUtils;
 
 import javax.jms.*;
 
@@ -40,16 +41,22 @@ public class ClientAcknowledgeTopicCustomerDemo {
             // 5、创建消息消费者 http://activemq.apache.org/destination-options.html
             consumer = session.createConsumer(destination);
 
-            // 6、接收消息(没有消息就持续等待)
-            Message message = consumer.receive();
-            if (message instanceof TextMessage) {
-                System.out.println("Topic 收到文本消息：" + ((TextMessage) message).getText());
-            } else {
-                System.out.println("Topic "+message);
-            }
 
-            // Session.CLIENT_ACKNOWLEDGE 模式 , 需要调用acknowledge ,否则队列不会清除
-            message.acknowledge();
+            for(int i=0;i<500;i++) {
+                // 6、接收消息(没有消息就持续等待)
+                Message message = consumer.receive();
+                String text = ((TextMessage) message).getText();
+                System.out.println("Topic收到消息="+text);
+                if (StringUtils.startsWith(text, "acknowledge")) {
+                    System.out.println(" 确认调用acknowledge ");
+                    // Session.CLIENT_ACKNOWLEDGE 模式 , 需要调用acknowledge ,否则队列不会清除
+                    message.acknowledge();
+                } else {
+                    //通知mq进行重发  最多重发六次  总共7次
+                    System.out.println(" -- 调用recover ");
+                    session.recover();
+                }
+            }
 
             consumer.close();
             session.close();
