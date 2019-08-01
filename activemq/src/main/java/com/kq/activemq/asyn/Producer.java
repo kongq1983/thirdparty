@@ -10,6 +10,7 @@ import javax.jms.MessageProducer;
 import javax.jms.Session;
 import javax.jms.TextMessage;
 
+import com.kq.activemq.Util;
 import org.apache.activemq.ActiveMQConnectionFactory;
 import org.apache.activemq.ActiveMQMessageProducer;
 import org.apache.activemq.AsyncCallback;
@@ -19,8 +20,8 @@ import org.apache.activemq.AsyncCallback;
  */
 public class Producer {
 	public static void main(String[] args) {
-		new ProducerThread("tcp://mq.study.com:61616", "queue1").start();
-		new ProducerThread("tcp://mq.study.com:61616", "queue1").start();
+		new ProducerThread(Util.ACTIVEMQ_URL, "queue1").start();
+		new ProducerThread(Util.ACTIVEMQ_URL, "queue1").start();
 	}
 
 	static class ProducerThread extends Thread {
