@@ -2,6 +2,7 @@ package com.kq.activemq.consumer;
 
 import com.kq.activemq.Util;
 import com.kq.activemq.delay.DelayFixedTimeProducer;
+import com.kq.activemq.delay.DelayRepeatProducer;
 import org.apache.activemq.ActiveMQConnectionFactory;
 import org.apache.commons.lang3.StringUtils;
 
@@ -18,7 +19,8 @@ public class CommonQueueConsumer {
 
     public static void main(String[] args) throws Exception{
 
-        String queueName = DelayFixedTimeProducer.DELAY_QUEUE;
+//        String queueName = DelayFixedTimeProducer.DELAY_QUEUE;
+        String queueName = DelayRepeatProducer.DELAY_QUEUE;
 
         ActiveMQConnectionFactory connectionFactory;
         Connection conn;
