@@ -51,8 +51,8 @@ public class DelayCronProducer {
             // http://activemq.apache.org/delay-and-schedule-message-delivery.html
 
             // 延时 5秒
-            TextMessage message = session.createTextMessage("Delay message - 1!");
-            message.setLongProperty(ScheduledMessage.AMQ_SCHEDULED_DELAY, 5 * 1000L);
+//            TextMessage message = session.createTextMessage("Delay message - 1!");
+//            message.setLongProperty(ScheduledMessage.AMQ_SCHEDULED_DELAY, 5 * 1000L);
 
             // 延时 5秒，投递3次，间隔10秒 (投递次数=重复次数+默认的一次)
 //            TextMessage message2 = session.createTextMessage("Delay message  - 2!");
@@ -64,18 +64,21 @@ public class DelayCronProducer {
 //            TextMessage message3 = session.createTextMessage("Delay message - 3!");
 //            message3.setStringProperty(ScheduledMessage.AMQ_SCHEDULED_CRON, "18 * * * *");
 //
-//            // CRON 表达式的方式 以及 和上面参数的组合，CRON表达式指定开始时间
-//            TextMessage message4 = session.createTextMessage("Delay message - 4!");
-//            message4.setStringProperty(ScheduledMessage.AMQ_SCHEDULED_CRON, "18 * * * *");
-//            message4.setLongProperty(ScheduledMessage.AMQ_SCHEDULED_DELAY, 1000);
-//            message4.setLongProperty(ScheduledMessage.AMQ_SCHEDULED_PERIOD, 1000);
-//            message4.setIntProperty(ScheduledMessage.AMQ_SCHEDULED_REPEAT, 9);
+
+
+//          // CRON 表达式的方式 以及 和上面参数的组合，CRON表达式指定开始时间
+            TextMessage message4 = session.createTextMessage("Delay message - four!");
+            // 分钟 小时 日期 月份 星期
+            message4.setStringProperty(ScheduledMessage.AMQ_SCHEDULED_CRON, "51 * * * *");
+            message4.setLongProperty(ScheduledMessage.AMQ_SCHEDULED_DELAY, 1000*30); // 延时
+            message4.setLongProperty(ScheduledMessage.AMQ_SCHEDULED_PERIOD, 3000); // 投递间隔
+            message4.setIntProperty(ScheduledMessage.AMQ_SCHEDULED_REPEAT, 5); // 重复次数
 
             // 7、发送消息
-            producer.send(message);
+//            producer.send(message);
 //            producer.send(message2);
 //            producer.send(message3);
-//            producer.send(message4);
+            producer.send(message4);
 
             System.out.println("Sent delay message: ok");
 
