@@ -16,7 +16,9 @@ public class CustomerWildcardsTopic {
 
     public static void main(String[] args) throws Exception{
 
-        String queueName = "com.wildcard.topic.1";
+//        String queueName = "com.wildcard.topic.1";
+        // 忽略abc  注意不能 com.>abc 要com.>.abc
+        String queueName = "com.>.abc";
 
         ActiveMQConnectionFactory connectionFactory;
         Connection conn;
