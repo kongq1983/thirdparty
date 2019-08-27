@@ -29,6 +29,7 @@
         <module>caffeine</module>
         <module>lettuce</module>
         <module>activemq</module>
+        <module>kafka</module>
     </modules>
 
 

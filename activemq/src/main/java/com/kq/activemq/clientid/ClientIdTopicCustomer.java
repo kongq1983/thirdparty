@@ -40,8 +40,9 @@ public class ClientIdTopicCustomer {
             Topic destination = session.createTopic(TOPIC_NAME);
 
             // 5、创建消息消费者 http://activemq.apache.org/destination-options.html
-            // 第2个参数  clientId
-            TopicSubscriber consumer = session.createDurableSubscriber(destination, CLIENT_ID);
+            // 第2个参数  Subscription Name
+            TopicSubscriber consumer = session.createDurableSubscriber(destination, "I love Durable");
+//            TopicSubscriber consumer = session.createDurableSubscriber(destination, CLIENT_ID);
 
             // 6、异步接收消息
             consumer.setMessageListener(new MessageListener() {
