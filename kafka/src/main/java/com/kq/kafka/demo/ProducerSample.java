@@ -22,11 +22,16 @@ public class ProducerSample {
         String topic = "test-topic";
 
         Producer<String,String> producer = new KafkaProducer<String, String>(props);
+        System.out.println("send 1.");
         producer.send(new ProducerRecord<String,String>(topic,"idea-key2","java-message-1"));
+        System.out.println("send 2.");
         producer.send(new ProducerRecord<String,String>(topic,"idea-key2","java-message-2"));
+        System.out.println("send 3.");
         producer.send(new ProducerRecord<String,String>(topic,"idea-key2","java-message-3"));
-
+        System.out.println("start colse.");
         producer.close();
+
+        System.out.println("the end.");
 
     }
 
