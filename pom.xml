@@ -30,6 +30,7 @@
         <module>lettuce</module>
         <module>activemq</module>
         <module>kafka</module>
+        <module>projectreactor</module>
     </modules>
 
 
