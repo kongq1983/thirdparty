@@ -1,2 +1,2 @@
-com.kq.myservice.impl.SimpleServiceImpl
+com.kq.service.impl.MyServiceImpl
 com.kq.myservice.impl.ComplexServiceImpl
