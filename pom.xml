@@ -31,6 +31,8 @@
         <module>activemq</module>
         <module>kafka</module>
         <module>projectreactor</module>
+        <module>hystrix</module>
+        <module>rxjava3</module>
     </modules>
 
 
