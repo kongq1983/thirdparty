@@ -51,7 +51,7 @@
         <common.io.version>2.6</common.io.version>
         <javasssit.version>3.20.0-GA</javasssit.version>
         <jasperreports.version>6.1.0</jasperreports.version>
-        <lettuce.version>5.1.7.RELEASE</lettuce.version>
+        <lettuce.version>5.2.1.RELEASE</lettuce.version>
         <caffeine.version>2.7.0</caffeine.version>
     </properties>
 

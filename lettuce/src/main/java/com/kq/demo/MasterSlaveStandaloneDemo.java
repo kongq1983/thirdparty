@@ -21,7 +21,7 @@ public class MasterSlaveStandaloneDemo {
         RedisClient redisClient = RedisClient.create();
 
         StatefulRedisMasterSlaveConnection<String, String> connection = MasterSlave.connect(redisClient, new Utf8StringCodec(),
-                RedisURI.create("redis://192.168.3.200:6379"));
+                RedisURI.create(Server.SERVER));
 //        connection.setReadFrom(ReadFrom.MASTER_PREFERRED);
         connection.setReadFrom(ReadFrom.SLAVE_PREFERRED);
 
