@@ -18,11 +18,21 @@ public class PrintOrderPageDemo {
 
     public static void main(String[] args) throws Exception{
 
-        File file = new File("jasperreport/src/main/resources/xiaopiao_page.jasper");
-        System.out.println("xiaopiao_nopage.jasper path ="+file.getAbsolutePath());
+        //0: xiaopiao_page.jasper
+        //1: xiaopiao_page_height.jasper
+        int index = 1;
+        String fileName = getFileName(index);
+//
+//        boolean isExportPdf = true;
+        boolean isExportPdf = false;
 
+        File file = new File("jasperreport/src/main/resources",fileName);
+        System.out.println(fileName+".jasper path ="+file.getAbsolutePath());
 
-        String outFile = "c:\\print\\xppage.html";
+        String suffix = "html";
+        if(isExportPdf) suffix="pdf";
+
+        String outFile = "c:\\print\\xppage_"+index+"."+suffix;
 
         FileUtils.forceMkdir(new File("c:\\print"));
 
@@ -35,11 +45,25 @@ public class PrintOrderPageDemo {
 
         Map<String,Object> map = new HashMap<>();
 
-        JasperRunManager.runReportToHtmlFile(file.getAbsolutePath(),outFile,map,dataSource);
+        if(isExportPdf){
+//            JasperRunManager.runReportToPdf(file.getAbsolutePath(),outFile,map,dataSource);
+            JasperRunManager.runReportToPdfFile(file.getAbsolutePath(),outFile,map,dataSource);
+        }else {
+            JasperRunManager.runReportToHtmlFile(file.getAbsolutePath(),outFile,map,dataSource);
+        }
+
+
 
     }
 
 
+    public static String getFileName(int index) {
+        if(index==0){
+            return "xiaopiao_page.jasper";
+        }
+
+        return "xiaopiao_page_height.jasper";
+    }
 
 
 }
