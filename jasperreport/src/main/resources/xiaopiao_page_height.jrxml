@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.5.1.final using JasperReports Library version 6.5.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="xiaop" pageWidth="210" pageHeight="147" orientation="Landscape" columnWidth="210" leftMargin="0" rightMargin="0" topMargin="20" bottomMargin="20" whenResourceMissingType="Error" uuid="d65fc08c-8461-48e3-a728-819eb14bd668">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Sample DB"/>
+	<property name="com.jaspersoft.studio.unit." value="mm"/>
+	<parameter name="qrCode" class="java.lang.String"/>
+	<parameter name="orderCode" class="java.lang.String"/>
+	<parameter name="name" class="java.lang.String"/>
+	<parameter name="mobile" class="java.lang.String"/>
+	<parameter name="deptName" class="java.lang.String"/>
+	<parameter name="totalPrice" class="java.math.BigDecimal"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="name" class="java.lang.String"/>
+	<field name="amount" class="java.lang.Integer"/>
+	<field name="price" class="java.math.BigDecimal"/>
+	<pageHeader>
+		<band height="55">
+			<staticText>
+				<reportElement x="10" y="20" width="60" height="18" uuid="561c266c-6396-4864-aba1-2e3e0420e382"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[编号]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="89" y="20" width="100" height="20" uuid="863a7ad4-278c-42e4-9228-34cab4326b63"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{orderCode}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="44">
+			<textField>
+				<reportElement x="28" y="22" width="100" height="18" uuid="362cf75e-f6e9-44b9-9a2c-9d2d2d181ffc"/>
+				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+			<break>
+				<reportElement x="0" y="43" width="200" height="1" uuid="3a744660-a1a2-435e-a9db-493e6d75d547">
+					<printWhenExpression><![CDATA[new Boolean($V{REPORT_COUNT}%1==0)]]></printWhenExpression>
+				</reportElement>
+			</break>
+			<line>
+				<reportElement x="10" y="10" width="171" height="1" uuid="521090d2-4d54-4b53-8f34-b4345819aec4"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="7">
+			<line>
+				<reportElement x="20" y="3" width="161" height="1" uuid="54865917-0e9e-44ac-a11c-e44ba210f666"/>
+			</line>
+		</band>
+	</columnFooter>
+</jasperReport>

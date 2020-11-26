@@ -13,7 +13,7 @@ public class ProducerSample {
 
     public static void main(String[] args) throws Exception{
         Map<String,Object> props = new HashMap<>();
-//        props.put("bootstrap.servers","mq.server1.com:9092");
+//        props.put("bootstrap.servers", KafkaUtil.SERVER);
         props.put("bootstrap.servers","192.168.3.200:9092");
         props.put("key.serializer","org.apache.kafka.common.serialization.StringSerializer");
         props.put("value.serializer","org.apache.kafka.common.serialization.StringSerializer");

@@ -1,5 +1,6 @@
 package com.kq.kafka.demo;
 
+import com.kq.kafka.util.KafkaUtil;
 import org.apache.kafka.clients.consumer.Consumer;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
@@ -11,10 +12,10 @@ import java.util.Properties;
 public class ConsumerSample {
 
     public static void main(String[] args) {
-        String topic = "test-topic";
+        String topic = KafkaUtil.TEST_TOPIC;
 
         Properties props = new Properties();
-        props.put("bootstrap.servers","mq.server1.com:9092");
+        props.put("bootstrap.servers", KafkaUtil.SERVER);
         props.put("group.id","testGroup1"); //分组id
         // 用于设置自动提交offset到zookeeper的时间间隔 单位毫秒
         props.put("enable.commit.interval.ms","1000");
