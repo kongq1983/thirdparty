@@ -28,9 +28,15 @@ public class GetDemo {
     }
 
 
-    public static void main(String[] args) throws IOException {
+    public static void main1(String[] args) throws IOException {
         GetDemo example = new GetDemo();
         String response = example.run("https://raw.github.com/square/okhttp/master/README.md");
+        System.out.println(response);
+    }
+
+    public static void main(String[] args) throws IOException {
+        GetDemo example = new GetDemo();
+        String response = example.run("http://172.16.5.12:8080");
         System.out.println(response);
     }
 }
