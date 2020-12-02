@@ -1,5 +1,6 @@
 package com.kq.ds;
 
+import com.kq.entity.Company;
 import com.kq.entity.User;
 
 import java.util.Date;
@@ -20,7 +21,17 @@ public class UserDataSourceFactory {
         return getUserList(150);
     }
 
-    public static List<User> getUserList(int size) {
+    public static Company getCompany(){
+        Company c = new Company();
+        c.setId(100);
+        c.setName("KingKing");
+        c.setAddress("zj");
+        c.setUserList(getUserList(100));
+
+        return c;
+    }
+
+  public static List<User> getUserList(int size) {
 
         List<User> list = new ArrayList<>();
 
