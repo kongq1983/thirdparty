@@ -33,7 +33,7 @@
 			<staticText>
 				<reportElement x="179" y="25" width="201" height="30" uuid="e3024c33-aa4e-433d-8752-ef0af8b1be04"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="16"/>
+					<font fontName="新宋体" size="16"/>
 				</textElement>
 				<text><![CDATA[KingKing员工统计]]></text>
 			</staticText>
@@ -90,14 +90,14 @@
 			<textField>
 				<reportElement x="90" y="2" width="89" height="30" uuid="467e8b8f-773a-466c-b2f7-c9e7d044ddf9"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="12"/>
+					<font fontName="新宋体" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="179" y="0" width="91" height="33" uuid="dae79c66-d6d2-4f8d-9848-6cd3c8760efd"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="12"/>
+					<font fontName="新宋体" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{gender}]]></textFieldExpression>
 			</textField>
