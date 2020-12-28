@@ -21,14 +21,17 @@ public class UserDataSourceFactory {
         return getUserList(150);
     }
 
-    public static Company getCompany(){
+    public static List<Company> getCompany(){
+
+        List<Company> companyList = new ArrayList<>();
         Company c = new Company();
         c.setId(100);
         c.setName("KingKing");
         c.setAddress("zj");
         c.setUserList(getUserList(100));
+        companyList.add(c);
 
-        return c;
+        return companyList;
     }
 
   public static List<User> getUserList(int size) {
