@@ -54,6 +54,7 @@
         <jasperreports.version>6.1.0</jasperreports.version>
         <lettuce.version>5.1.7.RELEASE</lettuce.version>
         <caffeine.version>2.7.0</caffeine.version>
+        <jsoup.version>1.11.2</jsoup.version>
     </properties>
 
 
@@ -131,6 +132,12 @@
                 <groupId>commons-io</groupId>
                 <artifactId>commons-io</artifactId>
                 <version>${common.io.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.jsoup</groupId>
+                <artifactId>jsoup</artifactId>
+                <version>${jsoup.version}</version>
             </dependency>
 
 
