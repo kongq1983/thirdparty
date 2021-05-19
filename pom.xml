@@ -34,6 +34,7 @@
         <module>projectreactor</module>
         <module>hystrix</module>
         <module>rxjava3</module>
+        <module>rocketmq</module>
     </modules>
 
 
@@ -55,7 +56,7 @@
         <lettuce.version>5.1.7.RELEASE</lettuce.version>
         <caffeine.version>2.7.0</caffeine.version>
         <jsoup.version>1.11.2</jsoup.version>
-        <jasperreports.font.version>6.3.0</jasperreports.font.version>
+        <jasperreports.font.version>>6.3.0</jasperreports.font.version>
     </properties>
 
 
