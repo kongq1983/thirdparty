@@ -7,6 +7,10 @@ import org.apache.rocketmq.client.producer.SendResult;
 import org.apache.rocketmq.common.message.Message;
 import org.apache.rocketmq.remoting.common.RemotingHelper;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.concurrent.TimeUnit;
+
 /**
  * 假如group_a和group_b都订阅了topic1，现在往topic1里发了一条消息，group_a和group_b是都能消费这条消息，还是只能有一个能消费这条消息。答案应该是两个组都能消费到这条消息
  * @author kq
@@ -31,11 +35,14 @@ public class SyncProducer {
 //        producer.setClientIP("172.16.67.21");
         //Launch the instance.
         producer.start();
-        for (int i = 0; i < 5; i++) {
+
+        int index = 1000;
+
+        for (int i = 0; i < index; i++) {
             //Create a message instance, specifying topic, tag and message body.
             Message msg = new Message("TopicTest" /* Topic */,
                     tag /* Tag */,
-                    ("Hello RocketMQ " +
+                    (LocalDateTime.now()+"，Hello RocketMQ " +
                             i).getBytes(RemotingHelper.DEFAULT_CHARSET) /* Message body */
             );
             //Call send message to deliver message to one of brokers.
@@ -45,6 +52,9 @@ public class SyncProducer {
             MyByteUtil.print(msg.getBody());
             SendResult sendResult = producer.send(msg,100000);
             System.out.printf("%s%n", sendResult);
+
+            TimeUnit.SECONDS.sleep(1);
+
         }
         //Shut down once the producer instance is not longer in use. broadcasting
         producer.shutdown();

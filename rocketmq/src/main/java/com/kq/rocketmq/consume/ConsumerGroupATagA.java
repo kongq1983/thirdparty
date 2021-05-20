@@ -20,7 +20,8 @@ public class ConsumerGroupATagA {
     public static void main(String[] args) throws InterruptedException, MQClientException {
 
         String groupName = Constants.GROUP_A;
-        String tag = Constants.TAG_A;
+//        String tag = Constants.TAG_A;
+        String tag = Constants.TAG_B;
 //        String tag = Constants.TAG_C;
         // Instantiate with specified consumer group name.
         DefaultMQPushConsumer consumer = new DefaultMQPushConsumer(groupName);
@@ -37,6 +38,12 @@ public class ConsumerGroupATagA {
             public ConsumeConcurrentlyStatus consumeMessage(List<MessageExt> msgs,
                                                             ConsumeConcurrentlyContext context) {
                 System.out.printf("%s Receive New Messages: %s %n", Thread.currentThread().getName(), msgs);
+
+                for(MessageExt m : msgs) {
+                    System.out.println("message="+new String(m.getBody()));
+                }
+
+                System.out.println();
                 return ConsumeConcurrentlyStatus.CONSUME_SUCCESS;
             }
         });
