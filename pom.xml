@@ -55,7 +55,7 @@
         <jasperreports.version>6.1.0</jasperreports.version>
         <lettuce.version>5.1.7.RELEASE</lettuce.version>
         <caffeine.version>2.7.0</caffeine.version>
-        <jsoup.version>1.11.2</jsoup.version>
+        <jsoup.version>1.14.2</jsoup.version>
         <jasperreports.font.version>>6.3.0</jasperreports.font.version>
     </properties>
 
