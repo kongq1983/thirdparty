@@ -37,7 +37,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font isBold="true"/>
 				</textElement>
-				<text><![CDATA[productName]]></text>
+				<text><![CDATA[菜品]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="58" y="16" width="53" height="21" uuid="3a5e7eca-e20f-4bb8-a3c5-51cc70118b16"/>
@@ -51,7 +51,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font isBold="true"/>
 				</textElement>
-				<text><![CDATA[person]]></text>
+				<text><![CDATA[审批人]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="112" y="16" width="68" height="21" uuid="af4cbb93-3cd5-41e3-aa86-c9894e5aef00"/>
@@ -65,7 +65,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font isBold="true"/>
 				</textElement>
-				<text><![CDATA[approveDate]]></text>
+				<text><![CDATA[审批日期]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="180" y="16" width="68" height="21" uuid="c34bbb12-6b6a-4635-9efd-7c9b260e053b"/>
@@ -112,16 +112,18 @@
 				</box>
 				<textFieldExpression><![CDATA[$F{approveDate}]]></textFieldExpression>
 			</textField>
-			<textField>
-				<reportElement x="180" y="2" width="69" height="28" uuid="f3e143ca-b3a6-46e5-8ce9-baf7796c6642"/>
+			<staticText>
+				<reportElement x="180" y="0" width="68" height="30" uuid="ab04e263-3665-4fbb-b60a-a2bcc1f5457c"/>
 				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
 					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textFieldExpression><![CDATA[$F{dtcolumn}]]></textFieldExpression>
-			</textField>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[dtvalue]]></text>
+			</staticText>
 		</band>
 	</detail>
 	<columnFooter>

@@ -3,9 +3,7 @@ package com.kq.dymicdemo;
 import com.kq.ds.SupplierPeiSongSourceFactory;
 import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
-import net.sf.jasperreports.engine.design.JRDesignStaticText;
-import net.sf.jasperreports.engine.design.JRDesignStyle;
-import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.design.*;
 import net.sf.jasperreports.engine.export.JRXlsExporter;
 import net.sf.jasperreports.engine.xml.JRXmlLoader;
 import org.apache.commons.io.FileUtils;
@@ -51,8 +49,10 @@ public class TableParseTest {
             // pagefoot 对应的样式
             JRDesignStyle tfootStyle = (JRDesignStyle) styleMap.get("tfoot");
 
-            dealColumn(jasperDesign);
+            dealTableHeader(jasperDesign);
+            dealTableDetail(jasperDesign);
 
+            // 编译 and 保存
             compileAndSave(jasperDesign);
 
         } catch (Exception e) {
@@ -63,7 +63,7 @@ public class TableParseTest {
     }
 
 
-    private static void dealColumn(JasperDesign jasperDesign) {
+    private static void dealTableHeader(JasperDesign jasperDesign) {
 
 
         List<JRChild> childList =  jasperDesign.getColumnHeader().getChildren();
@@ -100,10 +100,21 @@ public class TableParseTest {
             }
         }
 
+        JRDesignStaticText staticText = dealJRDesignStaticTextProp(lastWidth, lastX, staticTextTemp);
+
+        System.out.println("");
+
+        childList.add(staticText);
+
+//        childList.add(childList.get(size-1));
+
+    }
+
+    private static JRDesignStaticText dealJRDesignStaticTextProp(int lastWidth, int lastX, JRDesignStaticText staticTextTemp) {
         JRDesignStaticText staticText = new JRDesignStaticText();
 
         BeanUtils.copyProperties(staticTextTemp,staticText);
-        staticText.setX(lastX+lastWidth);
+        staticText.setX(lastX + lastWidth);
         staticText.setUUID(UUID.randomUUID());
 
         staticText.getLineBox().setBottomPadding(staticTextTemp.getLineBox().getBottomPadding());
@@ -117,15 +128,69 @@ public class TableParseTest {
         staticText.getLineBox().getRightPen().setLineWidth(staticTextTemp.getLineBox().getRightPen().getLineWidth());
         staticText.getLineBox().getRightPen().setLineColor(staticTextTemp.getLineBox().getRightPen().getLineColor());
 
+        return staticText;
 
-        childList.add(staticText);
+//        childList.add(staticText);
+    }
 
-        System.out.println("");
+    private static void dealTableDetail(JasperDesign jasperDesign) {
 
 
 
-//        childList.add(childList.get(size-1));
+        if(jasperDesign.getDetailSection() instanceof JRDesignSection) {
+            JRDesignSection designSection = (JRDesignSection)jasperDesign.getDetailSection();
 
+            List<JRBand> bandList = designSection.getBandsList();
+            System.out.println(bandList);
+
+            for(JRChild jrChild : bandList) {
+
+                if(jrChild instanceof JRDesignBand) {
+
+                    JRDesignBand designBand = (JRDesignBand)jrChild;
+
+                    List<JRChild> list = designBand.getChildren();
+
+                    int lastWidth = 0;
+                    int lastX = 0;
+
+                    JRDesignStaticText staticTextTemp = null;
+
+                    for(JRChild jrChild1 : list) {
+
+                        if (jrChild1 instanceof JRDesignStaticText) {
+                            JRDesignStaticText staticText = (JRDesignStaticText) (jrChild1);
+                            String text = staticText.getText();
+
+                            int x = staticText.getX();
+                            int y = staticText.getY();
+                            int width = staticText.getWidth();
+                            int height = staticText.getHeight();
+                            lastX = x;
+                            lastWidth = width;
+
+                            staticTextTemp = staticText;
+
+                            System.out.println("detail text=" + text + " x=" + x + ",y=" + y + ",width=" + width + ",height=" + height);
+
+
+                        }
+
+                    }
+
+                    JRDesignStaticText staticText = dealJRDesignStaticTextProp(lastWidth, lastX, staticTextTemp);
+                    staticText.setText("newDetail");
+                    list.add(staticText);
+                }
+            }
+
+
+
+
+
+        }else {
+            System.out.println("模板有问题..........");
+        }
 
 
     }
