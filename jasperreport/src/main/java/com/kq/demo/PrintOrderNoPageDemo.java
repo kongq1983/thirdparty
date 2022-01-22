@@ -3,7 +3,6 @@ package com.kq.demo;
 import com.kq.entity.Order;
 import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
-import net.sf.jasperreports.engine.export.JRHtmlExporter;
 import net.sf.jasperreports.engine.export.JRHtmlExporterParameter;
 import org.apache.commons.io.FileUtils;
 

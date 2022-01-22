@@ -2,48 +2,38 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <parent>
-        <artifactId>thirdparty</artifactId>
-        <groupId>com.kq</groupId>
-        <version>1.0-SNAPSHOT</version>
-    </parent>
+    <!--    <parent>-->
+    <!--        <artifactId>thirdparty</artifactId>-->
+    <!--        <groupId>com.kq</groupId>-->
+    <!--        <version>1.0-SNAPSHOT</version>-->
+    <!--    </parent>-->
     <modelVersion>4.0.0</modelVersion>
     <version>1.0.1</version>
 
     <groupId>com.kq</groupId>
     <artifactId>jasperreport</artifactId>
 
+    <properties>
+        <java.version>1.8</java.version>
+    </properties>
+
     <dependencies>
-
-        <!--<dependency>
-            <groupId>net.sf.jasperreports</groupId>
-            <artifactId>jasperreports</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>net.sf.jasperreports</groupId>
-            <artifactId>jasperreports-fonts</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>net.sf.jasperreports</groupId>
-            <artifactId>jasperreports-fonts-yahei</artifactId>
-        </dependency>-->
-
         <dependency>
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
+            <version>2.6</version>
         </dependency>
 
         <dependency>
             <groupId>org.jsoup</groupId>
             <artifactId>jsoup</artifactId>
-
+            <version>1.11.2</version>
         </dependency>
 
         <dependency>
             <groupId>net.sf.jasperreports</groupId>
             <artifactId>jasperreports</artifactId>
-            <version>6.4.3</version>
+            <version>6.3.0</version>
         </dependency>
         <dependency>
             <groupId>net.sf.jasperreports</groupId>
@@ -55,23 +45,41 @@
             <artifactId>jasperreports-fonts-yahei</artifactId>
             <version>6.3.0</version>
         </dependency>
-        <dependency>
+       <!-- <dependency>
             <groupId>net.sf.jasperreports</groupId>
             <artifactId>jasperreports-chart-customizers</artifactId>
             <version>6.4.1</version>
         </dependency>
-        <dependency>
+-->
+       <!-- <dependency>
             <groupId>net.sf.jasperreports</groupId>
             <artifactId>jasperreports-chart-themes</artifactId>
             <version>6.4.1</version>
-        </dependency>
-        <dependency>
+        </dependency>-->
+
+       <!-- <dependency>
             <groupId>net.sf.jasperreports</groupId>
             <artifactId>jasperreports-functions</artifactId>
             <version>6.4.1</version>
-        </dependency>
+        </dependency>-->
+
+
 
     </dependencies>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+
+        </plugins>
+
+    </build>
 
 </project>
