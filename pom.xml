@@ -45,7 +45,7 @@
         <okhttp3.version>3.14.0</okhttp3.version>
         <fastjson.version>1.2.56</fastjson.version>
         <guava.version>27.1-jre</guava.version>
-        <drools.version>7.0.0.Final</drools.version>
+        <drools.version>7.60.0.Final</drools.version>
         <junit.version>4.12</junit.version>
         <ehcache.version>3.7.0</ehcache.version>
         <javax.cache.version>1.1.0</javax.cache.version>
