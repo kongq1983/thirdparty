@@ -35,6 +35,7 @@
         <module>hystrix</module>
         <module>rxjava3</module>
         <module>rocketmq</module>
+        <module>asm</module>
     </modules>
 
 
