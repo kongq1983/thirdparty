@@ -25,8 +25,6 @@ public class FieldAddDemo {
         cc.addField(f);
 
 
-
-
         cc.writeFile("D:\\javassist\\");
 
     }
