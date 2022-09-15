@@ -36,6 +36,7 @@
         <module>rxjava3</module>
         <module>rocketmq</module>
         <module>asm</module>
+        <module>bytebuddy</module>
     </modules>
 
 
