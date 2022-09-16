@@ -12,3 +12,21 @@ public class Foo {
     public String foo(Object o) { return null; }
 
 }
+
+// 最终生成类
+//public class Foo$ByteBuddy$OF2hPviB extends Foo {
+//    public String bar() {
+//        return "One!";
+//    }
+//
+//    public String foo(Object o) {
+//        return "Three!";
+//    }
+//
+//    public String foo() {
+//        return "Two!";
+//    }
+//
+//    public Foo$ByteBuddy$OF2hPviB() {
+//    }
+//}
